@@ -7,4 +7,13 @@ services:
       - ./product-api/:/usr/src/app
     ports:
       - 8081:80
+  
+  website:
+    image: php:apache
+    volumes:
+      - ./product-ui/:/var/www/html
+    ports:
+      - 8082:80
+    depends_on:
+      - product-service
 
