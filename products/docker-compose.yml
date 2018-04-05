@@ -1,0 +1,10 @@
+version: '3'
+
+services: 
+  product-service:
+    build: ./product-api
+    volumes:
+      - ./product-api/:/usr/src/app
+    ports:
+      - 8081:80
+
