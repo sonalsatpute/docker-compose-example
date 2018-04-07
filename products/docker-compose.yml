@@ -4,16 +4,16 @@ services:
   product-service:
     build: ./product-api
     volumes:
-      - ./product-api/:/usr/src/app
+      - ./product-api:/usr/src/app
     ports:
-      - 8081:80
+      - 5001:80
   
   website:
-    image: php:apache
+    image: php:7.0-apache
     volumes:
-      - ./product-ui/:/var/www/html
+      - ./product-ui:/var/www/html
     ports:
-      - 8082:80
+      - 5000:80
     depends_on:
       - product-service
 

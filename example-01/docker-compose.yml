@@ -1,8 +1,10 @@
 version: '3'
 services:
   website:
+    container_name: example-01
     build: .
     ports:
      - "8080:80"
   redis:
     image: "redis:alpine"
+    container_name: redis
